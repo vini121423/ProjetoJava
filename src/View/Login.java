@@ -27,73 +27,68 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        textField3 = new java.awt.TextField();
+        campoTexto = new java.awt.TextField();
+        campoSenha = new javax.swing.JPasswordField();
+        tituloSenha = new javax.swing.JLabel();
+        tituloLogin = new javax.swing.JLabel();
+        tituloUsuario = new javax.swing.JLabel();
+        botao = new javax.swing.JToggleButton();
+        tela2 = new javax.swing.JLabel();
+        wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textField1.addActionListener(new java.awt.event.ActionListener() {
+        campoTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
+                campoTextoActionPerformed(evt);
             }
         });
-        getContentPane().add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 160, -1));
+        getContentPane().add(campoTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 160, -1));
 
-        textField2.setFont(new java.awt.Font("Dotum", 0, 14)); // NOI18N
-        textField2.setText("SENHA");
-        textField2.addActionListener(new java.awt.event.ActionListener() {
+        campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField2ActionPerformed(evt);
+                campoSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
+        getContentPane().add(campoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 160, -1));
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 160, -1));
+        tituloSenha.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        tituloSenha.setForeground(new java.awt.Color(255, 255, 255));
+        tituloSenha.setText("SENHA");
+        getContentPane().add(tituloSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/5.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 490, 470));
+        tituloLogin.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        tituloLogin.setForeground(new java.awt.Color(255, 255, 255));
+        tituloLogin.setText("LOGIN");
+        getContentPane().add(tituloLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        tituloUsuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        tituloUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        tituloUsuario.setText("USUÁRIO");
+        getContentPane().add(tituloUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
 
-        textField3.setFont(new java.awt.Font("Dotum", 0, 14)); // NOI18N
-        textField3.setText("USUÁRIO");
-        textField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
+        botao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botao.setText("ENTRAR");
+        getContentPane().add(botao, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 160, -1));
+
+        tela2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/5.jpg"))); // NOI18N
+        tela2.setText("jLabel2");
+        getContentPane().add(tela2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 490, 470));
+
+        wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/1.jpg"))); // NOI18N
+        getContentPane().add(wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_campoSenhaActionPerformed
 
-    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
+    private void campoTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTextoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textField1ActionPerformed
-
-    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField2ActionPerformed
-
-    private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textField3ActionPerformed
+    }//GEN-LAST:event_campoTextoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,11 +126,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField2;
-    private java.awt.TextField textField3;
+    private javax.swing.JToggleButton botao;
+    private javax.swing.JPasswordField campoSenha;
+    private java.awt.TextField campoTexto;
+    private javax.swing.JLabel tela2;
+    private javax.swing.JLabel tituloLogin;
+    private javax.swing.JLabel tituloSenha;
+    private javax.swing.JLabel tituloUsuario;
+    private javax.swing.JLabel wallpaper;
     // End of variables declaration//GEN-END:variables
 }
