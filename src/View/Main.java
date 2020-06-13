@@ -1,13 +1,14 @@
-
 package View;
 
+import Model.Agendamento;
 import Model.Cliente;
 import Model.Servico;
 import Model.Usuario;
 
 public class Main {
-    public static void main(String[] args){
-        String nome = "Teste";
+
+    public static void main(String[] args) {
+        /*  String nome = "Teste";
         System.out.println(nome);
                
         // Usando a classe criada Servico, criando para ela uma variável// 
@@ -20,8 +21,10 @@ public class Main {
         
         System.out.println(cliente.getNome());
        
-        
-       
-    } 
-    
+        Agendamento agendamento = new Agendamento(1,30,"26/01/2021 09:15", cliente, servico);
+         System.out.println(agendamento.getCliente().getNome());
+
+         */
+    }
+
 }
