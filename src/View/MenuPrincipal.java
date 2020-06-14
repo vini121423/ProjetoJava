@@ -5,17 +5,22 @@
  */
 package View;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author Josué
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -32,6 +37,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         cadastro = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        operacao = new javax.swing.JMenu();
+        agenda = new javax.swing.JMenuItem();
         acoes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,7 +55,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(cadastro);
 
-        acoes.setText("Ações");
+        operacao.setText("Operação");
+
+        agenda.setText("Agenda");
+        agenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agendaActionPerformed(evt);
+            }
+        });
+        operacao.add(agenda);
+
+        jMenuBar1.add(operacao);
+
+        acoes.setText("Relatório");
         jMenuBar1.add(acoes);
 
         setJMenuBar(jMenuBar1);
@@ -66,6 +85,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void agendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agendaActionPerformed
+        // TODO add your handling code here:
+        this.controller.navegarParaAgenda();
+    }//GEN-LAST:event_agendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,10 +128,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu acoes;
+    private javax.swing.JMenuItem agenda;
     private javax.swing.JMenu cadastro;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu operacao;
     private javax.swing.JLabel wallpaper2;
     // End of variables declaration//GEN-END:variables
 }

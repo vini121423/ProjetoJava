@@ -1,8 +1,11 @@
 package Controller;
 
 import Controller.Helper.LoginHelper;
+import Model.DAO.UsuarioDAO;
 import Model.Usuario;
 import View.Login;
+import View.MenuPrincipal;
+import java.util.ArrayList;
 
 public class LoginController {
 
@@ -16,7 +19,19 @@ public class LoginController {
 
     public void entrarNoSistema() {
         Usuario usuario = helper.receberModelo();
-
+        
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuarioAutenticado = usuarioDAO.
+        
+        if(usuarioAutenticado != null){
+            MenuPrincipal menu = new MenuPrincipal();
+            
+            menu.setVisible(true);
+            this.view.dispose();
+        }else{
+            view.exibirMsg("Usuário ou senha inválidos!");
+        }
+           
     }
 
     public void tarefaRealizada() {
