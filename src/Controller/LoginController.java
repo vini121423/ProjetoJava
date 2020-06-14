@@ -21,7 +21,7 @@ public class LoginController {
         Usuario usuario = helper.receberModelo();
         
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        Usuario usuarioAutenticado = usuarioDAO.
+        Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuario);
         
         if(usuarioAutenticado != null){
             MenuPrincipal menu = new MenuPrincipal();

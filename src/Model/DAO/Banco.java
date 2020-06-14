@@ -30,6 +30,19 @@ public class Banco {
         
         Agendamento agendamento1 = new Agendamento(12, 25, "20/06/2021 12:10",cliente2,servico2);
         Agendamento agendamento2 = new Agendamento(13, 30, "20/06/2021 19:40",cliente1,servico1);
+        
+        usuario.add(usuario1);
+        usuario.add(usuario2);
+        
+        cliente.add(cliente1);
+        cliente.add(cliente2);
+        
+        servico.add(servico1);
+        servico.add(servico2);
+      
+        agendamento.add(agendamento1);
+        agendamento.add(agendamento2);
+      
 
     }
 }

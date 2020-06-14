@@ -5,17 +5,19 @@
  */
 package View;
 
-/**
- *
- * @author Josué
- */
-public class Agenda extends javax.swing.JFrame {
+import Controller.AgendaController;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
+public class Agenda extends javax.swing.JFrame {
+    private final AgendaController controller;
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        controller = new AgendaController(this);
+        iniciar();
     }
 
     /**
@@ -46,7 +48,7 @@ public class Agenda extends javax.swing.JFrame {
         titleHora = new javax.swing.JLabel();
         fundoAgenda = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         campoValor.addActionListener(new java.awt.event.ActionListener() {
@@ -217,4 +219,26 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel titleServico;
     private javax.swing.JLabel titleValor;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+      controller.atualizarTabela();
+    }
+
+    public JScrollPane getTabela() {
+        return tabela;
+    }
+
+    public void setTabela(JScrollPane tabela) {
+        this.tabela = tabela;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+    
+    
 }
