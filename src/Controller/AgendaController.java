@@ -42,6 +42,11 @@ public class AgendaController {
         ArrayList<Servico> servicos = servicoDAO.selectAll();
         helper.preencherServicos(servicos);
     }
+    
+    public void atualizaValor(){
+      Servico servico =  helper.obterServico();
+      helper.setarValor(servico.getValor());
+    }
 
     
 }

@@ -9,9 +9,12 @@ import Controller.AgendaController;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 public class Agenda extends javax.swing.JFrame {
+
     private final AgendaController controller;
+
     /**
      * Creates new form Agenda
      */
@@ -80,6 +83,11 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(campoHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 130, 30));
 
+        selectorServico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                selectorServicoItemStateChanged(evt);
+            }
+        });
         getContentPane().add(selectorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, -1));
 
         getContentPane().add(selectorCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, -1));
@@ -163,6 +171,10 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoHoraActionPerformed
 
+    private void selectorServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selectorServicoItemStateChanged
+        this.controller.atualizaValor();
+    }//GEN-LAST:event_selectorServicoItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -220,9 +232,10 @@ public class Agenda extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {
-      controller.atualizarTabela();
-      this.controller.atualizaCliente();
-      this.controller.atualizarServico();
+        controller.atualizarTabela();
+        this.controller.atualizaCliente();
+        this.controller.atualizarServico();
+        this.controller.atualizaValor();
     }
 
     public JScrollPane getTabela() {
@@ -256,6 +269,13 @@ public class Agenda extends javax.swing.JFrame {
     public void setSelectorServico(JComboBox<String> selectorServico) {
         this.selectorServico = selectorServico;
     }
-    
-    
+
+    public JTextField getCampoValor() {
+        return campoValor;
+    }
+
+    public void setCampoValor(JTextField campoValor) {
+        this.campoValor = campoValor;
+    }
+
 }

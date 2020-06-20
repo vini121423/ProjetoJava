@@ -49,7 +49,14 @@ public class AgendaHelper {
             comboBoxModel.addElement(servicos);
         }
     }
-    
-   
+
+    public Servico obterServico() {
+     return (Servico) view.getSelectorServico().getSelectedItem();
+     
+    }
+
+    public void setarValor(float valor) {
+       view.getCampoValor().setText(valor+"");
+    }
 
 }
