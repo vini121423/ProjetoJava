@@ -19,7 +19,7 @@ public class Banco {
         servico = new ArrayList<Servico>();
         agendamento = new ArrayList<Agendamento>();
 
-        Usuario usuario1 = new Usuario("33334", "1", 2434, "Cléber", 'M', "30/02/2001", "3323524", "email@email.com", "243.436.325");
+        Usuario usuario1 = new Usuario("senha", "1", 2434, "nome", 'M', "30/02/2001", "3323524", "email@email.com", "243.436.325");
         Usuario usuario2 = new Usuario("senh1", "2", 2445, "Maria", 'F', "10/04/1980", "3444", "mariaemail@email.com", "343.452.135");
 
         Cliente cliente1 = new Cliente("Rua Palmeiras do Norte - 210", "41231-000", 231, "Núbia Neves", 'F', "12/12/1992", "9934535", "neves_nubia@email.com", "345.552.332");

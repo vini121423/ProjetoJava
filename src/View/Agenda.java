@@ -6,6 +6,7 @@
 package View;
 
 import Controller.AgendaController;
+import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -79,10 +80,8 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(campoHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 130, 30));
 
-        selectorServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tesoura", "Máquina", " " }));
         getContentPane().add(selectorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, -1));
 
-        selectorCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alexandre", "Guilherme" }));
         getContentPane().add(selectorCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, -1));
 
         botao.setBackground(new java.awt.Color(255, 255, 255));
@@ -222,6 +221,8 @@ public class Agenda extends javax.swing.JFrame {
 
     private void iniciar() {
       controller.atualizarTabela();
+      this.controller.atualizaCliente();
+      this.controller.atualizarServico();
     }
 
     public JScrollPane getTabela() {
@@ -238,6 +239,22 @@ public class Agenda extends javax.swing.JFrame {
 
     public void setjTable1(JTable jTable1) {
         this.jTable1 = jTable1;
+    }
+
+    public JComboBox<String> getSelectorCliente() {
+        return selectorCliente;
+    }
+
+    public void setSelectorCliente(JComboBox<String> selectorCliente) {
+        this.selectorCliente = selectorCliente;
+    }
+
+    public JComboBox<String> getSelectorServico() {
+        return selectorServico;
+    }
+
+    public void setSelectorServico(JComboBox<String> selectorServico) {
+        this.selectorServico = selectorServico;
     }
     
     
