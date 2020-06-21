@@ -10,7 +10,7 @@ import Model.Servico;
 import View.Agenda;
 import java.util.ArrayList;
 
-public class AgendaController {
+public class AgendaController{
 
     private final Agenda view;
     private final AgendaHelper helper;
@@ -46,6 +46,10 @@ public class AgendaController {
     public void atualizaValor(){
       Servico servico =  helper.obterServico();
       helper.setarValor(servico.getValor());
+    }
+    
+    public void agendar(){
+       
     }
 
     

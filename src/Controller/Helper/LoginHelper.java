@@ -3,7 +3,7 @@ package Controller.Helper;
 import Model.Usuario;
 import View.Login;
 
-public class LoginHelper {
+public class LoginHelper implements IHelper {
 
     private final Login view;
 
@@ -26,5 +26,15 @@ public class LoginHelper {
 
         view.getCampoTexto().setText(nome);
         view.getCampoSenha().setText(senha);
+    }
+
+    @Override
+    public Object obterModelo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void limparTela() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

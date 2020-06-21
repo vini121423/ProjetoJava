@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
-public class AgendaHelper {
+public class AgendaHelper  implements IHelper {
 
     private final Agenda view;
 
@@ -46,7 +46,7 @@ public class AgendaHelper {
         DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getSelectorServico().getModel();
         
         for (Servico servico : servicos) {
-            comboBoxModel.addElement(servicos);
+            comboBoxModel.addElement(servico);
         }
     }
 
@@ -58,5 +58,17 @@ public class AgendaHelper {
     public void setarValor(float valor) {
        view.getCampoValor().setText(valor+"");
     }
+
+    @Override
+    public Agendamento obterModelo() {
+       
+    }
+
+    @Override
+    public void limparTela() {
+        
+    }
+    
+    
 
 }

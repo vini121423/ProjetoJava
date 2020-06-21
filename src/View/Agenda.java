@@ -95,6 +95,11 @@ public class Agenda extends javax.swing.JFrame {
         botao.setBackground(new java.awt.Color(255, 255, 255));
         botao.setForeground(new java.awt.Color(51, 51, 51));
         botao.setText("Agendar");
+        botao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(botao, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -174,6 +179,10 @@ public class Agenda extends javax.swing.JFrame {
     private void selectorServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selectorServicoItemStateChanged
         this.controller.atualizaValor();
     }//GEN-LAST:event_selectorServicoItemStateChanged
+
+    private void botaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoActionPerformed
+        this.controller.agendar();
+    }//GEN-LAST:event_botaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,5 +286,7 @@ public class Agenda extends javax.swing.JFrame {
     public void setCampoValor(JTextField campoValor) {
         this.campoValor = campoValor;
     }
+  
+    
 
 }
