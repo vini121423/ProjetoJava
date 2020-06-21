@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
-public class AgendaHelper  implements IHelper {
+public class AgendaHelper implements IHelper {
 
     private final Agenda view;
 
@@ -37,38 +37,60 @@ public class AgendaHelper  implements IHelper {
     public void preencherClientes(ArrayList<Cliente> clientes) {
         DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getSelectorCliente().getModel();
 
-        for(Cliente cliente : clientes) {
+        for (Cliente cliente : clientes) {
             comboBoxModel.addElement(cliente);
         }
     }
 
     public void preencherServicos(ArrayList<Servico> servicos) {
         DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getSelectorServico().getModel();
-        
+
         for (Servico servico : servicos) {
             comboBoxModel.addElement(servico);
         }
     }
 
     public Servico obterServico() {
-     return (Servico) view.getSelectorServico().getSelectedItem();
-     
+        return (Servico) view.getSelectorServico().getSelectedItem();
+
+    }
+    
+    public Cliente obterCliente() {
+        return (Cliente) view.getSelectorCliente().getSelectedItem();
+
     }
 
     public void setarValor(float valor) {
-       view.getCampoValor().setText(valor+"");
+        view.getCampoValor().setText(valor + "");
     }
 
     @Override
     public Agendamento obterModelo() {
-       
+
+        String idString = view.getCampoId().getText();
+        int id = Integer.parseInt(idString);
+        Cliente cliente = obterCliente();
+        Servico servico = obterServico();
+        String valorString = view.getCampoValor().getText();
+        float valor = Float.parseFloat(valorString);
+        
+        String data = view.getCampoData().getText();
+        String hora = view.getCampoHora().getText();
+        
+        String dataHora = data + " " + hora;
+        String observacao = view.getjTextArea1().getText();
+        
+        Agendamento agendamento = new Agendamento(id, valor, dataHora, cliente, servico, observacao);
+        return agendamento;
     }
 
     @Override
     public void limparTela() {
-        
+        view.getCampoId().setText("");
+        view.getCampoValor().setText("");
+        view.getCampoData().setText("");
+        view.getCampoHora().setText("");
+        view.getjTextArea1().setText("");
     }
-    
-    
 
 }

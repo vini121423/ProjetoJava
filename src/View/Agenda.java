@@ -7,8 +7,10 @@ package View;
 
 import Controller.AgendaController;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class Agenda extends javax.swing.JFrame {
@@ -34,9 +36,9 @@ public class Agenda extends javax.swing.JFrame {
     private void initComponents() {
 
         campoValor = new javax.swing.JTextField();
-        campoTexto = new javax.swing.JTextField();
         campoData = new javax.swing.JTextField();
         campoHora = new javax.swing.JTextField();
+        campoId = new javax.swing.JTextField();
         selectorServico = new javax.swing.JComboBox<>();
         selectorCliente = new javax.swing.JComboBox<>();
         botao = new javax.swing.JToggleButton();
@@ -46,10 +48,10 @@ public class Agenda extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         titleServico = new javax.swing.JLabel();
         titleCliente = new javax.swing.JLabel();
-        titeNome = new javax.swing.JLabel();
         titleValor = new javax.swing.JLabel();
         titleData = new javax.swing.JLabel();
         titleHora = new javax.swing.JLabel();
+        titeId = new javax.swing.JLabel();
         fundoAgenda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,13 +63,6 @@ public class Agenda extends javax.swing.JFrame {
             }
         });
         getContentPane().add(campoValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 130, 30));
-
-        campoTexto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoTextoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(campoTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
 
         campoData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,14 +78,26 @@ public class Agenda extends javax.swing.JFrame {
         });
         getContentPane().add(campoHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 130, 30));
 
+        campoId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoId, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, -1));
+
         selectorServico.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 selectorServicoItemStateChanged(evt);
             }
         });
-        getContentPane().add(selectorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, -1));
+        getContentPane().add(selectorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 130, -1));
 
-        getContentPane().add(selectorCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 130, -1));
+        selectorCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectorClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(selectorCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, -1));
 
         botao.setBackground(new java.awt.Color(255, 255, 255));
         botao.setForeground(new java.awt.Color(51, 51, 51));
@@ -127,17 +134,12 @@ public class Agenda extends javax.swing.JFrame {
         titleServico.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         titleServico.setForeground(new java.awt.Color(255, 255, 255));
         titleServico.setText("SERVIÇO");
-        getContentPane().add(titleServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        getContentPane().add(titleServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         titleCliente.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         titleCliente.setForeground(new java.awt.Color(255, 255, 255));
         titleCliente.setText("CLIENTE");
-        getContentPane().add(titleCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        titeNome.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        titeNome.setForeground(new java.awt.Color(255, 255, 255));
-        titeNome.setText("NOME");
-        getContentPane().add(titeNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(titleCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         titleValor.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         titleValor.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,6 +156,11 @@ public class Agenda extends javax.swing.JFrame {
         titleHora.setText("HORA");
         getContentPane().add(titleHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, -1));
 
+        titeId.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        titeId.setForeground(new java.awt.Color(255, 255, 255));
+        titeId.setText("ID");
+        getContentPane().add(titeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+
         fundoAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/3.gif"))); // NOI18N
         getContentPane().add(fundoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -163,10 +170,6 @@ public class Agenda extends javax.swing.JFrame {
     private void campoValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoValorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoValorActionPerformed
-
-    private void campoTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTextoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoTextoActionPerformed
 
     private void campoDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataActionPerformed
         // TODO add your handling code here:
@@ -183,6 +186,14 @@ public class Agenda extends javax.swing.JFrame {
     private void botaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoActionPerformed
         this.controller.agendar();
     }//GEN-LAST:event_botaoActionPerformed
+
+    private void selectorClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectorClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectorClienteActionPerformed
+
+    private void campoIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,7 +234,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JToggleButton botao;
     private javax.swing.JTextField campoData;
     private javax.swing.JTextField campoHora;
-    private javax.swing.JTextField campoTexto;
+    private javax.swing.JTextField campoId;
     private javax.swing.JTextField campoValor;
     private javax.swing.JLabel fundoAgenda;
     private javax.swing.JTable jTable1;
@@ -232,7 +243,7 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> selectorCliente;
     private javax.swing.JComboBox<String> selectorServico;
     private javax.swing.JScrollPane tabela;
-    private javax.swing.JLabel titeNome;
+    private javax.swing.JLabel titeId;
     private javax.swing.JLabel titleCliente;
     private javax.swing.JLabel titleData;
     private javax.swing.JLabel titleHora;
@@ -286,7 +297,39 @@ public class Agenda extends javax.swing.JFrame {
     public void setCampoValor(JTextField campoValor) {
         this.campoValor = campoValor;
     }
-  
-    
+
+    public JTextField getCampoId() {
+        return campoId;
+    }
+
+    public void setCampoId(JTextField campoId) {
+        this.campoId = campoId;
+    }
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+    public JTextField getCampoData() {
+        return campoData;
+    }
+
+    public void setCampoData(JTextField campoData) {
+        this.campoData = campoData;
+    }
+
+    public JTextField getCampoHora() {
+        return campoHora;
+    }
+
+    public void setCampoHora(JTextField campoHora) {
+        this.campoHora = campoHora;
+    }
+
+   
 
 }

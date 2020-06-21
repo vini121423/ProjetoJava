@@ -1,4 +1,3 @@
-
 package Model;
 
 import java.text.ParseException;
@@ -8,30 +7,34 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Agendamento {
-    private  int id;
+
+    private int id;
     private float valor;
     private Date data;
-    private String observacao; 
+    private String observacao;
     private Cliente cliente;
     private Servico servico;
 
     public Agendamento(int id, float valor, String data, Cliente cliente, Servico servico) {
         this.id = id;
         this.valor = valor;
-        
-        
+        this.cliente = cliente;
+        this.servico = servico;
+
         // Formatando variável data importar e circundar com instrução com Try-Catch //
         try {
             this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
         } catch (ParseException ex) {
             Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.cliente = cliente;
-        this.servico = servico;
+
     }
 
-    
-    
+    public Agendamento(int id, float valor, String data, Cliente cliente, Servico servico, String observacao) {
+        this(id, valor, data, cliente, servico);
+        this.observacao = observacao;
+    }
+
     public int getId() {
         return id;
     }
@@ -51,12 +54,12 @@ public class Agendamento {
     public Date getData() {
         return data;
     }
-    
-    public String getDataFormatada(){
+
+    public String getDataFormatada() {
         return new SimpleDateFormat("dd/mm/yyyy").format(data);
     }
-    
-    public String getHoraFormatada(){
+
+    public String getHoraFormatada() {
         return new SimpleDateFormat("HH:mm").format(data);
     }
 
@@ -87,7 +90,5 @@ public class Agendamento {
     public void setServico(Servico servico) {
         this.servico = servico;
     }
-    
-    
-    
+
 }
