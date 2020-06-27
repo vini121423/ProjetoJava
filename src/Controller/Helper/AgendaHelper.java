@@ -86,7 +86,7 @@ public class AgendaHelper implements IHelper {
 
     @Override
     public void limparTela() {
-        view.getCampoId().setText("");
+        view.getCampoId().setText("0");
         view.getCampoValor().setText("");
         view.getCampoData().setText("");
         view.getCampoHora().setText("");
